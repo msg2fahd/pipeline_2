@@ -1,0 +1,24 @@
+pipeline {
+	agent any
+		stages {
+			stage('Build') {
+                      	steps {
+								echo 'Running build phase..'
+								bat 'attempt1.bat'                           	}
+                    	}
+         	
+         	stage('Test'){
+         				steps{
+         						echo 'Testing progress...'
+                                bat 'python test.py'
+         					}
+        			 	}
+         	
+         	stage('Deploy'){
+         				steps{
+         						echo 'Deploying is in  progress...'
+         					}
+         				}
+
+         }        
+ }
